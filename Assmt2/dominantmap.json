@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Cian2001/irs_datasets/main/world_map.json",
+    "format": {"property": "features"}
+  },
+  "layer": [
+    {
+      "data": {"sphere": {}},
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightblue"
+      },
+      "projection": {"type": "equalEarth"}
+    },
+    {
+      "data": {"graticule": {}},
+      "mark": {"type": "geoshape", "stroke": "#ddd", "strokeWidth": 0.5},
+      "projection": {"type": "equalEarth"}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "key": "Country",
+            "fields": ["Predominant"],
+            "data": {
+              "url": "bloodtypes.csv",
+              "format": {"type": "csv"}
+            }
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#c6c5c5",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "Predominant",
+          "type": "nominal",
+          "scale": {
+            "domain": ["O+", "A+", "B+", "AB+", "O-", "A-", "B-", "AB-"],
+            "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f"]
+          },
+          "legend": {
+            "title": "Predominant Blood Type",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "square"
+          }
+        },
+        "tooltip": [
+          {"field": "properties.name", "title": "Country", "type": "nominal"},
+          {"field": "Predominant", "title": "Predominant Blood Type", "type": "nominal"}
+        ]
+      }
+    }
+  ],
+  "config": {"mark": {"invalid": null}}
+}
