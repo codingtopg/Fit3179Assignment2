@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://codingtopg.github.io/Fit3179Assignment2/Assmt2/Bloodtypes.csv"
+    },
+    "transform": [
+      {
+        "filter": "datum.Country === 'China'"
+      },
+      {
+        "fold": ["O+", "A+", "B+", "AB+", "O-", "A-", "B-", "AB-"]
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "arc",
+          "innerRadius": 50,
+          "stroke": "#fff"
+        },
+        "encoding": {
+          "theta": {
+            "field": "value",
+            "type": "quantitative",
+            "stack": true
+          },
+          "color": {
+            "field": "key",
+            "type": "nominal",
+            "scale": {
+              "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f"]
+            },
+            "legend": {
+              "title": "Blood Type"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "key",
+              "type": "nominal",
+              "title": "Blood Type"
+            },
+            {
+              "field": "value",
+              "type": "quantitative",
+              "title": "Percentage",
+              "format": ".2f"
+            }
+          ],
+          "text": {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 23
+        },
+        "encoding": {
+          "text": {
+            "value": "China"
+          }
+        }
+      }
+    ]
+  }
+  

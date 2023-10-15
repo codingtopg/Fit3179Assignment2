@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": {
+      "text": "Blood Type Compatibility",
+      "fontSize": 20
+    },
+    "data": {
+      "values": [
+        {"BloodType": "O+", "CanGiveTo": "O+, A+, B+, AB+", "CanReceiveFrom": "O+, O-"},
+        {"BloodType": "A+", "CanGiveTo": "A+, AB+", "CanReceiveFrom": "A+, A-, O+, O-"},
+        {"BloodType": "B+", "CanGiveTo": "B+, AB+", "CanReceiveFrom": "B+, B-, O+, O-"},
+        {"BloodType": "AB+", "CanGiveTo": "AB+", "CanReceiveFrom": "All Blood Types"},
+        {"BloodType": "O-", "CanGiveTo": "All Blood Types", "CanReceiveFrom": "O-"},
+        {"BloodType": "A-", "CanGiveTo": "A-, A+, AB-, AB+", "CanReceiveFrom": "A-, O-"},
+        {"BloodType": "B-", "CanGiveTo": "B-, B+, AB-, AB+", "CanReceiveFrom": "B-, O-"},
+        {"BloodType": "AB-", "CanGiveTo": "AB-, AB+", "CanReceiveFrom": "AB-, A-, B-, O-"}
+      ]
+    },
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "CanGiveTo",
+        "type": "ordinal",
+        "title": "Donate Blood To These Types"
+      },
+      "y": {
+        "field": "CanReceiveFrom",
+        "type": "ordinal",
+        "title": "Receive Blood From These Types"
+      },
+      "color": {
+        "field": "BloodType",
+        "type": "nominal",
+        "scale": {
+          "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f"]
+        },
+        "title": "Blood Types"
+      }
+    },
+    "config": {
+    }
+  }
+  
+  

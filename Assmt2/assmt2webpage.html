@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <style>
+    #vis1 {
+        display: block;
+        margin: 0 auto;
+        width: 80%; 
+    }
+</style>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+        <div class="page">
+            <h1>Global Blood Types Report</h1>
+            <p>Blood plays a <span class="highlight">crucial role</span> in our well-being:</p>
+    <ul>
+        <li>Dispensing <strong>essential nutrients</strong> throughout our body.</li>
+        <li>Facilitating the <strong>exchange of gases</strong> - oxygen and carbon dioxide.</li>
+        <li>Mobilizing the immune system's defense mechanisms against infections.</li>
+    </ul>
+            <p>The project aim to unravel the blood type distribution on a worldwide scale,spanning across the global landscape, covering nearly 8 billion people distributed among 124 countries. 
+              The following visualisation presensts data from Global Blood Type Distribution, detailing the predominant/minor blood types in a global scale, blood type compatibility and certain countries' blood type composition. In doing so, I want to heighten public awareness about the importance and implications of different blood types.
+
+
+</p>
+          </div>
+    </div>
+    <!-- end pure grid group -->
+
+<!-- Inside Page 2 -->
+<div class="page">
+  <h2>Global Predominant Blood type Overview</h2>
+  <!-- Visualization 1 -->
+  <div id="vis1" class="vis-container1"></div>
+  <p>The Map visualisation provides an overview of the predominant blood types across different countries and regions of the world. The map uses distinct colours to represent each blood type, allowing for quick visual differentiation.</p>
+
+  <p>The vast majority of countries are represented in blue, indicating that blood type O+ is the most dominant worldwide. While many countries in Europe and some parts of Asia are highlighted in orange, signifying a dominance of blood type A+ in these regions.</p>
+
+  <p><b><span class="highlight">Iraq, Pakistan, India, Bhutan, and Bangladesh</span></b> have an eye-catching green colour, indicating a predominant prevalence of blood type B+. In summary, this visual provides a clear and concise representation of the dominant blood types in various countries, highlighting the global prevalence of certain blood types over others.<br>
+  
+  <br></p>
+   <!-- Visualization 2 with body text -->
+
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+        <div id="vis2" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-2">
+        <div class="description description-left">
+            <p>The bar chart visually represents the distribution of predominant blood types within continents based on the number of countries.<br><br>
+                <strong>Asia</strong>: has the highest diversity in dominant blood types, with a substantial number of countries having O+ blood type, followed by A+ and then B+. <br>
+                <strong>Europe</strong>: showcases a similar pattern to Asia but has a higher number of countries where A+ is predominant. <br>
+                <strong>Africa</strong>: predominantly represented by the O+ blood type with a small fraction of countries in Africa showing A+ as the dominant type. <br>
+                <strong>Americas & Oceania</strong>: exclusively O+ dominated regions.
+            <br><br>
+
+            Similar to the map above, O+ blood type stands out as the most widespread predominant blood type across continents. Asia exhibits the most diverse distributions, with multiple blood types represented.</p>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- Visualization 3 with body text -->
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div class="description description-left">
+      <p>The blood transfusion process starts with collecting blood from suitable donors.The Blood Type Compatibility Matrix chart provides crucial insights into which blood types can donate to and receive from others.<br><br>
+
+        <strong>O-:</strong> Often called the "universal donor," O- blood can be given to any blood type, making donors with this blood type exceptionally valuable. However, O- individuals can only receive from their own type.<br>
+        
+        <strong>AB+:</strong> Referred to as the "universal recipient," individuals with AB+ blood type can receive blood from any donor. This is a unique advantage, but when donating, AB+ can only give to their own type and AB-.<br>
+        
+        <strong>A and B Types:</strong> A+ and A- blood types can donate to A and AB variants. Similarly, B+ and B- types can give to B and AB variants. Their reception is more limited, primarily sticking within their main type and the universal O types.<br><br>
+        
+        While some of us have the flexibility to receive from multiple donors, our ability to donate varies. This emphasizes the significance of a diverse pool of blood donors. Everyone plays a pivotal role. Encouraging everyone, regardless of their blood type, to donate can ensure that there's always a match available for someone in need.
+         </p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis3" class="vis-container"></div>
+  </div>
+</div>
+
+
+<!-- Inside Page 3 -->
+<div class="page">
+  <div class="description description-left">
+  <h2>The Least Common Blood type AB- in Every Country</h2>
+  <p> <mark>Why is AB blood group rare?</mark> In fact, people with <b>blood type AB</b> are rare and special because they have both A and B antigens on the surface of red blood cells, but no antibodies in the plasma. <b>AB-</b> is even more rare because it's a combination of two less common traits:<br> <b>*The AB blood type, which is uncommon to begin with.<br> *The negative Rh factor, which is also less common than the positive type.</b><br><br>
+  </p>
+    <!-- Visualization 5 -->
+    <div id="vis5" class="vis-container"></div>
+    <p>The bubble chart presents the distribution of the rarest blood type, AB-, across different countries and continents. Given that AB- is the rarest blood type, understanding its distribution is essential. Countries with fewer AB- individuals might face challenges in medical emergencies requiring AB- blood.<br><br>
+
+      The x-axis represents the overall population of each country, which is logarithmically scaled, allowing for a better visualization of countries. Meanwhile, the y-axis shows the population of AB- individuals in these countries. The Continent-wise Breakdown put each continent by a distinct colour. For instance, countries in Asia like China and India appear in blue, while countries from Oceania like Australia and New Zealand are represented in orange. The size of each bubble indicates the overall population of the country. Larger bubbles signify countries with a larger population, and vice-versa. <br>
+      The built in functions like Continent Selection and Population toggle allow audience to adjust freely. The filtered data would also display accordingly.  
+      </p>
+  </div>
+</div>
+  <!-- Visualization 4 -->
+<div class="description description-left">
+  <h2>Distribution for Countries Overview</h2>
+  <p>This part showcases an overview of blood type distributions for four different countries: Australia, France, India, and China. 
+    Each country is represented by a donut chart with various blood types by colour.<br><br>
+    In summary, while there are variations in different countries, certain blood types like A+ and O+ seem to be prevalent across all displayed countries.<br><br>
+
+</p>
+  <div class="pure-g">
+      <div class="pure-u-1-4">
+          <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+          <div id="vis7" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+          <div id="vis6" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+          <div id="vis8" class="vis-container"></div> 
+      </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./dominantmap.json";
+    var specVis2 = "./barplot.json";
+    var specVis3 = "./bloodmatrix.json";
+    var specVis4 = "./auspie.json";
+    var specVis5 = "./bubblechart.json";
+    var specVis6 = "./indiapiechart.json";
+    var specVis7 = "./francepie.json";
+    var specVis8 = "./chinapie.json";
+
+
+
+
+
+
+    vegaEmbed('#vis1', specVis1, { "actions": false,
+    "width": 1000,
+    "height": 600
+   });
+
+
+    vegaEmbed('#vis2', specVis2, { "actions": false,
+    "width": 400,
+    "height": 420 });
+
+    vegaEmbed('#vis3', specVis3, { "actions": false
+   });
+
+    vegaEmbed('#vis4', specVis4, { "actions": false
+   });
+
+
+   vegaEmbed('#vis5', specVis5, { "actions": false,
+    "width": 1000,
+    "height": 800
+   });
+
+   vegaEmbed('#vis6', specVis6, { "actions": false
+   });
+   vegaEmbed('#vis7', specVis7, { "actions": false
+   });
+   vegaEmbed('#vis8', specVis8, { "actions": false
+   });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Composition of Predominant Blood Types by Continent",
+    "fontSize": 24, 
+    "dy": -35
+  },
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://codingtopg.github.io/Fit3179Assignment2/Assmt2/Bloodtypes.csv"
+  },
+  "transform": [
+    {
+      "filter": {"field": "Predominant", "oneOf": ["A+", "B+", "O+"]}
+    },
+    {
+      "aggregate": [
+        {"op": "count", "as": "Number_of_Countries", "field": "Country"}
+      ],
+      "groupby": ["Continent", "Predominant"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Continent",
+      "type": "nominal",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "Number_of_Countries",
+      "type": "quantitative",
+      "title": "Number of Countries"
+    },
+    "color": {
+      "field": "Predominant",
+      "type": "nominal",
+      "title": "Predominant Blood Type",
+      "scale": {
+        "domain": ["A+", "B+", "O+"],
+        "range": ["#ff7f0e", "#2ca02c", "#1f77b4"]
+      }
+    }
+  },
+  "config": {
+    "axis": {"grid": false},
+    "view": {"stroke": "transparent"}
+  }
+}
+
